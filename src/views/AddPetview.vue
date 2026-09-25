@@ -1,9 +1,11 @@
 <script setup>
-// Página inicial do projeto.
+
 </script>
 
 <template>
-  <main class="container py-5">
+
+
+ <main class="container py-5">
     <div
       class="alert alert-success"
       role="alert"
@@ -18,4 +20,7 @@
       </p>
     </div>
   </main>
+
+
+  
 </template>
