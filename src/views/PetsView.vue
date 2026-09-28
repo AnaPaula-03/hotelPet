@@ -1,6 +1,6 @@
 <script setup>
 
-import { onMounted } from 'vue';
+import { onMounted, ref} from 'vue';
 import { RouterLink } from 'vue-router';
 
 const API_URL = 'http://localhost:3000'
@@ -9,13 +9,13 @@ const pets = ref([]);
 const tutores = ref([]);
 const loading = ref(true);
 
-async function carregarDados(params) {
+async function carregarDados() {
 
   const dadosPets = await fetch(`${API_URL}/pets`);
-  pets.value = await respostaPets.json();
+  pets.value = await dadosPets.json();
   console.log('pets', pets.value)
 
-  const respostaTutores = await fetch ('$API_URL/pets')
+  const respostaTutores = await fetch ('${API_URL}/tutores')
   tutores.value = await respostaTutores.json();
   console.log('tutores', tutores.value)
   loading.value = false
@@ -25,7 +25,7 @@ async function carregarDados(params) {
 function nomeTutor (TutorId){
   for (const tutor of tutores.value) {
     //tutor.id = TutorId
-    if( tutor.id = tutor.value){
+    if( tutor.id == tutor.value){
       return tutor.value;
     }
   }
